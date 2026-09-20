@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:islamicapp/screens/hadeethNameConst.dart';
+import 'package:islamicapp/theme.dart';
 
 class Hadeeth extends StatelessWidget {
   Hadeeth({super.key});
@@ -75,11 +76,11 @@ class Hadeeth extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 24.sp,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      color: AppColors.textPrimary),
                 ),
                 Image.asset('dark mode/hadeth_logo.png'),
                 Divider(
-                  color: Colors.yellow,
+                  color: AppColors.gold,
                   thickness: 3,
                   height: 3.h,
                 ),
@@ -88,28 +89,29 @@ class Hadeeth extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 26.sp,
-                      color: Colors.white),
+                      color: AppColors.textPrimary),
                 ),
                 Divider(
-                  color: Colors.yellow,
+                  color: AppColors.gold,
                   thickness: 3,
                   height: 3.h,
                 ),
-                 Expanded(
-          child: ListView.separated(separatorBuilder: (context,index){
-            return Divider(
-          color: Colors.yellow,
-          thickness: 2,
-          height: 3.h,
-        );
-        
-          },
-          itemBuilder: (context, index){
-               return hadeethNames(name: hadeethName[index], index: index);
-          },
-          itemCount: hadeethName.length,
-          ),
-          )
+                Expanded(
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) {
+                      return Divider(
+                        color: AppColors.line,
+                        thickness: 2,
+                        height: 3.h,
+                      );
+                    },
+                    itemBuilder: (context, index) {
+                      return hadeethNames(
+                          name: hadeethName[index], index: index);
+                    },
+                    itemCount: hadeethName.length,
+                  ),
+                )
               ],
             ),
           ),

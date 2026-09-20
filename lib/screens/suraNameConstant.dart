@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:islamicapp/screens/suraDetails.dart';
+import 'package:islamicapp/theme.dart';
 
 class suraName extends StatelessWidget {
-  suraName({required this.name, required this.index});
-  String name;
-  int index;
+  suraName({super.key, required this.name, required this.index});
+  final String name;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -12,11 +13,22 @@ class suraName extends StatelessWidget {
         Navigator.of(context).pushNamed(suraDetails.id,
             arguments: suraDetailsArgs(name: name, index: index));
       },
-      child: Text(
-        textAlign: TextAlign.center,
-        name,
-        style: TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 28, color: Colors.white),
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 18, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+        decoration: BoxDecoration(
+          color: AppColors.navyLight.withValues(alpha: 0.86),
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(color: AppColors.line),
+        ),
+        child: Text(
+          textAlign: TextAlign.center,
+          name,
+          style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 22,
+              color: AppColors.textPrimary),
+        ),
       ),
     );
   }

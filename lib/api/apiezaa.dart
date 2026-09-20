@@ -24,15 +24,12 @@ Future<String?> fetchArabicLanguage() async {
         // Return the radio URL
         return arabicLanguage['radios'];
       } else {
-        print('Arabic language not found.');
         return null;
       }
     } else {
-      print('Failed to load data. Status code: ${response.statusCode}');
       return null;
     }
   } catch (e) {
-    print('Error occurred: $e');
     return null;
   }
 }
@@ -54,16 +51,13 @@ Future<void> fetchRadios() async {
         // Print details for each radio
         for (var radio in radios) {
        Radiourl.add(radio['url']);
-          print(Radiourl);
         }
       } else {
-        print('No radios found.');
       }
     } else {
-      print('Failed to load data. Status code: ${response.statusCode}');
     }
   } catch (e) {
-    print('Error occurred: $e');
+  
   }
 }
 

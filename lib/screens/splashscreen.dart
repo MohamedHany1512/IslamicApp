@@ -5,6 +5,9 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 class SplashScreen extends StatelessWidget {
   @override
   static String id='SplashScreen';
+
+  const SplashScreen({super.key});
+  @override
   Widget build(BuildContext context) {
    
     return Padding(

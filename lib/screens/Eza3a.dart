@@ -1,15 +1,16 @@
-import 'package:islamicapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:islamicapp/api/apiezaa.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:islamicapp/theme.dart';
 
 class Ezaa extends StatefulWidget {
-  Ezaa({super.key});
+  const Ezaa({super.key});
 
   @override
   State<Ezaa> createState() => _EzaaState();
 }
+
 class _EzaaState extends State<Ezaa> {
   AudioPlayer? audioPlayer;
   bool isPlaying = false;
@@ -39,25 +40,20 @@ class _EzaaState extends State<Ezaa> {
       await fetchRadios(); // Make sure fetchRadios populates radiourl correctly
       if (_isMounted) {
         setState(() {
-          radiourl = Radiourl; // Assume Radiourl is a global variable from fetchRadios
+          radiourl =
+              Radiourl; // Assume Radiourl is a global variable from fetchRadios
         });
-        print('Radio URLs loaded successfully');
       }
-    } catch (e) {
-      print('Error loading radio URLs: $e');
-    }
+    } catch (e) {}
   }
 
   Future<void> _playAudio(String url) async {
     try {
-      print('Attempting to play URL: $url');
       if (isPlaying) {
         await audioPlayer!.stop();
       }
       await audioPlayer!.play(UrlSource(url));
-    } catch (e) {
-      print('Error playing audio: $e');
-    }
+    } catch (e) {}
   }
 
   void _togglePlayback() async {
@@ -67,19 +63,14 @@ class _EzaaState extends State<Ezaa> {
       } else {
         if (radiourl.isNotEmpty && index < radiourl.length) {
           await _playAudio(radiourl[index]);
-        } else {
-          print('No valid URL to play.');
-          print(radiourl);
-        }
+        } else {}
       }
       if (_isMounted) {
         setState(() {
           isPlaying = !isPlaying;
         });
       }
-    } catch (e) {
-      print('Error toggling playback: $e');
-    }
+    } catch (e) {}
   }
 
   void _nextAudio() {
@@ -88,9 +79,7 @@ class _EzaaState extends State<Ezaa> {
         index++;
         _playAudio(radiourl[index]);
       });
-    } else {
-      print('No next audio to play.');
-    }
+    } else {}
   }
 
   void _previousAudio() {
@@ -99,11 +88,9 @@ class _EzaaState extends State<Ezaa> {
         index--;
         _playAudio(radiourl[index]);
       });
-    } else {
-      print('No previous audio to play.');
-    }
+    } else {}
   }
-  
+
   @override
   void dispose() {
     _isMounted = false; // Set the flag to false
@@ -118,12 +105,12 @@ class _EzaaState extends State<Ezaa> {
       children: [
         Text(
           'إسلامي',
-          style: TextStyle(fontSize: 28.sp, color: Colors.white),
+          style: TextStyle(fontSize: 28.sp, color: AppColors.textPrimary),
         ),
         Image.asset('dark mode/radio_image.png'),
         Text(
           'إذاعة القرآن الكريم',
-          style: TextStyle(fontSize: 24.sp, color: Colors.white),
+          style: TextStyle(fontSize: 24.sp, color: AppColors.textPrimary),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -132,7 +119,7 @@ class _EzaaState extends State<Ezaa> {
               onPressed: _previousAudio,
               icon: Icon(
                 Icons.arrow_back_outlined,
-                color: Colors.white,
+                color: AppColors.textPrimary,
                 size: 24.sp,
               ),
             ),
@@ -140,7 +127,7 @@ class _EzaaState extends State<Ezaa> {
               onPressed: _togglePlayback,
               icon: Icon(
                 isPlaying ? Icons.stop : Icons.play_arrow_rounded,
-                color: Colors.white,
+                color: AppColors.gold,
                 size: 24.sp,
               ),
             ),
@@ -148,7 +135,7 @@ class _EzaaState extends State<Ezaa> {
               onPressed: _nextAudio,
               icon: Icon(
                 Icons.arrow_forward_outlined,
-                color: Colors.white,
+                color: AppColors.textPrimary,
                 size: 24.sp,
               ),
             ),

@@ -3,9 +3,10 @@ import 'package:islamicapp/screens/Eza3a.dart';
 import 'package:islamicapp/screens/sebha.dart';
 import 'package:islamicapp/screens/quranTab.dart';
 import 'package:islamicapp/screens/hadeethTab.dart';
+import 'package:islamicapp/theme.dart';
 
 class homepage extends StatefulWidget {
-  homepage({super.key});
+  const homepage({super.key});
   static String id = 'homepage';
 
   @override
@@ -33,11 +34,11 @@ class _homepageState extends State<homepage> {
         _pages.elementAt(_selectedIndex),
       ]),
       bottomNavigationBar: BottomNavigationBar(
-     type: BottomNavigationBarType.fixed, 
-       backgroundColor: Color(0xff141A2E), 
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: AppColors.navyLight,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            backgroundColor: Color(0xff141A2E),
+            backgroundColor: AppColors.navyLight,
             icon: Image.asset('dark mode/icon_radio.png'),
             label: 'Radio',
           ),
@@ -56,13 +57,12 @@ class _homepageState extends State<homepage> {
         ],
         currentIndex: _selectedIndex,
         onTap: onItemTapped,
-        selectedItemColor: Colors.white,
+        selectedItemColor: AppColors.gold,
       ),
     );
   }
 
   void onItemTapped(int index) {
-    
     setState(() {
       _selectedIndex = index;
     });
