@@ -8,11 +8,11 @@ A comprehensive and modern Islamic companion Flutter application designed to enr
 
 | Splash & Theme | Holy Quran | Sura Details |
 | :---: | :---: | :---: |
-| ![Splash Screen](screenshots/Screenshot%202026-09-20%20222520.png) | ![Quran Tab](screenshots/Screenshot%202026-09-20%20222541.png) | ![Sura Details](screenshots/Screenshot%202026-09-20%20222557.png) |
+| ![Splash Screen](assets/screenshots/Screenshot 2026-09-20 222520.png) | ![Quran Tab](assets/screenshots/Screenshot%202026-09-20%20222541.png) | ![Sura Details](assets/screenshots/Screenshot%202026-09-20%20222557.png) |
 
 | Prophetic Hadiths | Electronic Sebha | Islamic Radio |
 | :---: | :---: | :---: |
-| ![Hadith Details](screenshots/Screenshot%202026-09-20%20222608.png) | ![Electronic Sebha](screenshots/Screenshot%202026-09-20%20222621.png) | ![Islamic Radio](screenshots/PK%20screenshots/Screenshot%202026-09-20%20222520.png) |
+| ![Hadith Details](assets/screenshots/Screenshot%202026-09-20%20222608.png) | ![Electronic Sebha](assets/screenshots/Screenshot%202026-09-20%20222621.png) | ![Islamic Radio](assets/screenshots/PK%20screenshots/Screenshot%202026-09-20%20222520.png) |
 
 ---
 
