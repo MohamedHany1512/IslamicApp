@@ -12,7 +12,7 @@ A comprehensive and modern Islamic companion Flutter application designed to enr
 
 | Prophetic Hadiths | Electronic Sebha | Islamic Radio |
 | :---: | :---: | :---: |
-| ![Hadith Details](assets/screenshots/Screenshot%202026-09-20%20222608.png) | ![Electronic Sebha](assets/screenshots/Screenshot%202026-09-20%20222621.png) | ![Islamic Radio](assets/screenshots/PK%20screenshots/Screenshot%202026-09-20%20222520.png) |
+| ![Hadith Details](assets/screenshots/Screenshot%202026-09-20%20222608.png) | ![Electronic Sebha](assets/screenshots/Screenshot%202026-09-20%20222621.png) | ![Islamic Radio](assets/screenshots/Screenshot%202026-09-20%20222520.png) |
 
 ---
 
